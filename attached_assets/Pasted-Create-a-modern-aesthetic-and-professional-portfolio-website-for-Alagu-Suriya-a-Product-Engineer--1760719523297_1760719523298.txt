@@ -1,0 +1,152 @@
+Create a modern, aesthetic, and professional portfolio website for Alagu Suriya, a Product Engineer, Software Developer, and Data Engineer based in Dindigul, India.
+
+The site should have a clean layout, soft gradients, rounded corners, elegant spacing, and responsive design.
+Use a white or pastel background with subtle color accents (blue, violet, grey).
+Typography should be Poppins or Inter for a sleek look.
+
+🧑‍💻 Hero Section
+
+Name: Alagu Suriya
+
+Tagline: Turning ideas into scalable products and data-driven solutions
+
+Short intro:
+
+“B.E. Computer Science graduate with hands-on experience in product engineering, ETL workflows, and frontend development. Passionate about solving problems through clean, efficient, and reliable code.”
+
+Buttons:
+
+“View Projects” → scrolls to Projects section
+
+“Download Resume” → placeholder link
+
+Add a smooth fade-up animation and minimalist background pattern.
+
+💡 About Section
+
+Title: About Me
+
+Content:
+
+“I’m a Computer Science Engineer skilled in Java, SQL, PySpark, and React.js, with practical experience in debugging, workflow optimization, and product enhancement.
+I completed a stipend-based internship at DataSwitch (TridentSoft Intelligence Solutions), where I worked on ETL tools and XML-to-JSON data transformations.
+Currently, I’m developing real-world and personal frontend projects to sharpen my design and problem-solving skills.”
+
+⚙️ Skills Section
+
+Languages: Java, JavaScript, SQL, Python
+
+Frameworks/Libraries: React.js, PySpark
+
+Tools: Talend Studio, Eclipse, Git, GitHub, HTML, CSS, Figma, MongoDB, NoSQL, XML, JSON, ETL, DAG workflow
+
+Core Competencies: Data Transformation, Debugging, Tool Development, Workflow Optimization, Team Collaboration
+
+Use icons or progress bars to make it clean but not flashy.
+
+🧩 Projects Section
+
+Title: Projects
+
+Layout: Card or grid-based, minimal shadows, hover animations
+
+🚀 VentureLoop — Startup & Investor Platform (Freelance / Final Year Project)
+
+Full stack web platform connecting startup founders with investors.
+
+Developed for a real-life client; project was paid and delivered successfully.
+
+Features include secure authentication, dashboards, investor profiles, and listings.
+
+Tech Stack: React.js (frontend), REST APIs, database integration.
+
+Currently in marketing phase.
+
+🔗 https://ventureloopfrontend.onrender.com
+
+🌼 Woolen Flower & Crochet Business Website (Ongoing)
+
+Frontend website for a small business selling handmade flowers and bouquets.
+
+Designed a clean product showcase layout using HTML, CSS, JavaScript.
+
+👟 Nike Clone Website
+
+Practice project replicating Nike’s landing page UI using HTML, CSS, JavaScript.
+
+Focused on responsive layout and animation transitions.
+
+🔗 https://suriya11.neocities.org/Nike/Home
+
+🦸 Marvel Blog Website
+
+Mini blog site displaying Marvel characters with UI grids and cards.
+
+Built with HTML, CSS, and JS to practice content layout and styling.
+
+🔗 https://suriya11.neocities.org/marvel/marvel
+
+🧾 To-Do List Web App
+
+Simple DOM-based task manager with add/remove functionality.
+
+🔗 https://suriya11.neocities.org/To%20Do%20List/task2
+
+🏢 Experience
+
+Product Engineer Intern — DataSwitch (TridentSoft Intelligence Solutions), Chennai (Jun 2025 – Sep 2025)
+
+Developed and optimized enterprise-scale ETL tools using Java and Talend.
+
+Redesigned Talend Reader logic for XML-to-JSON conversion.
+
+Debugged and improved job reliability and data workflow efficiency.
+
+Completed a stipend-based internship, gaining strong real-world problem-solving experience.
+
+🎓 Education
+
+B.E. in Computer Science and Engineering — Anna University (SSMIET, Dindigul) — Jul 2022 – May 2025
+
+Diploma in Mechanical Engineering — Govt. Polytechnic College, Coimbatore — Jul 2019 – May 2022
+
+📜 Certifications
+
+IBM — Introduction to Artificial Intelligence
+
+IBM — Mastering the Art of Prompting
+
+GeeksforGeeks — Master of Frontend
+
+Guvi — Prompt Engineering
+
+📞 Contact Section
+
+Email: suriyanlk18@gmail.com
+
+Phone: +91 9597478911
+
+GitHub: github.com/Suriya1811
+
+LinkedIn: linkedin.com/in/alagusuriya
+
+Add a simple contact form and social icons.
+
+🌈 Design Preferences
+
+Single-page scrolling layout
+
+Soft white background with light gradients (blue-violet)
+
+Rounded buttons with smooth hover transitions
+
+Sticky navbar with section links (About, Skills, Projects, Experience, Contact)
+
+Add smooth fade-in animations between sections
+
+Footer text:
+
+“© 2025 Alagu Suriya | Built with ❤️ using HTML, CSS & AI tools.”
+
+The website should be responsive (mobile-friendly) and easy to host on Neocities, Netlify, or GitHub Pages.
+Include space for a downloadable resume button and active project links.
