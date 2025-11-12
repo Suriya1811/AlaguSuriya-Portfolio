@@ -113,7 +113,7 @@ export default function Hero() {
             data-testid="button-view-resume"
           >
             <a
-              href="https://drive.google.com/file/d/1GBDcuLllarwnXi2UfpNMnpLIp4N7I5-7/view"
+              href="https://drive.google.com/file/d/1GBDcuLllarwnXi2UfpNMnpLIp4N7I5-7/view?usp=drivesdk"
               target="_blank"
               rel="noopener noreferrer"
             >
