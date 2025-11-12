@@ -50,7 +50,6 @@ export default function Navbar() {
             className="text-xl font-bold text-foreground hover-elevate px-4 py-2 rounded-md transition-all"
             data-testid="link-home"
           >
-            Alagu Suriya
           </button>
 
           {/* Desktop Menu */}
@@ -78,23 +77,6 @@ export default function Navbar() {
               ) : (
                 <Moon className="h-5 w-5" />
               )}
-            </Button>
-
-            {/* ✅ View Resume Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              className="gap-2"
-              asChild
-            >
-              <a
-                href="https://drive.google.com/file/d/1GBDcuLllarwnXi2UfpNMnpLIp4N7I5-7/view?usp=drivesdk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Download className="h-4 w-4" />
-                View Resume
-              </a>
             </Button>
           </div>
 
@@ -126,7 +108,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-2" data-testid="menu-mobile">
+          <div className="md:hidden mt-4 pb-4 space-y-2 rounded-lg bg-background/80 backdrop-blur-md shadow-lg border border-border/50 px-4" data-testid="menu-mobile">
             {navLinks.map((link) => (
               <Button
                 key={link.id}
@@ -138,22 +120,6 @@ export default function Navbar() {
                 {link.label}
               </Button>
             ))}
-
-            {/* ✅ Mobile View Resume */}
-            <Button
-              variant="outline"
-              className="w-full justify-start gap-2"
-              asChild
-            >
-              <a
-                href="https://drive.google.com/file/d/1GBDcuLllarwnXi2UfpNMnpLIp4N7I5-7/view?usp=drivesdk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Download className="h-4 w-4" />
-                View Resume
-              </a>
-            </Button>
           </div>
         )}
       </div>

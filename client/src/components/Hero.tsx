@@ -48,7 +48,7 @@ export default function Hero() {
           >
             Alagu Suriya
           </h1>
-
+<br></br>
           {/* Professional roles */}
           <p
             className="text-lg md:text-xl text-muted-foreground mb-6"
@@ -117,7 +117,6 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Download className="w-4 h-4" />
               View Resume
             </a>
           </Button>
