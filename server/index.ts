@@ -1,8 +1,8 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import open from "open"; // <-- auto open browser (optional)
 
+// Create Express app
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -26,11 +26,9 @@ app.use((req, res, next) => {
       if (capturedJsonResponse) {
         logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
       }
-
       if (logLine.length > 80) {
         logLine = logLine.slice(0, 79) + "…";
       }
-
       log(logLine);
     }
   });
@@ -41,6 +39,7 @@ app.use((req, res, next) => {
 (async () => {
   const server = await registerRoutes(app);
 
+  // Error handling
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
@@ -48,33 +47,18 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // In development, use Vite middleware; in production, serve built client
-  if (app.get("env") === "development") {
+  // ✅ Render: use static build in production
+  if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // ✅ Safe host logic for all environments
-  const port = parseInt(process.env.PORT || "3000", 10);
-  const host =
-    process.env.REPL_ID || process.env.HOST === "0.0.0.0"
-      ? "0.0.0.0"
-      : "127.0.0.1";
+  // ✅ Render requires process.env.PORT — never hardcode 3000
+  const port = parseInt(process.env.PORT || "10000", 10);
 
-  // Start server
-  server.listen(port, host, async () => {
-    const url = `http://${host}:${port}`;
-    log(`✅ Server running at ${url}`);
-
-    // Auto-open browser only when running locally
-    if (host === "127.0.0.1") {
-      try {
-        await open(url);
-        log("🌐 Opened in default browser");
-      } catch {
-        log("⚠️ Could not auto-open browser");
-      }
-    }
+  // ✅ Listen on all interfaces (Render sets host automatically)
+  server.listen(port, () => {
+    log(`✅ Server running on port ${port}`);
   });
 })();
