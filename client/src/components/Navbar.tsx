@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun, Download } from "lucide-react";
+import { useTheme } from "@/components/theme-provider";
 
 export default function Navbar() {
+  const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,6 +22,17 @@ export default function Navbar() {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
+  };
+
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/src/resume/Alagusuriya-Resume.pdf";
+    link.download = "Alagusuriya-Resume.pdf";
+    link.click();
+  };
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   const navLinks = [
@@ -57,17 +70,52 @@ export default function Navbar() {
                 {link.label}
               </Button>
             ))}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={downloadResume}
+              className="gap-2"
+            >
+              <Download className="h-4 w-4" />
+              Resume
+            </Button>
           </div>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            data-testid="button-mobile-menu"
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </Button>
+          <div className="flex md:hidden items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              data-testid="button-mobile-menu"
+            >
+              {isMobileMenuOpen ? <X /> : <Menu />}
+            </Button>
+          </div>
         </div>
 
         {isMobileMenuOpen && (
@@ -83,6 +131,14 @@ export default function Navbar() {
                 {link.label}
               </Button>
             ))}
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-2"
+              onClick={downloadResume}
+            >
+              <Download className="h-4 w-4" />
+              Download Resume
+            </Button>
           </div>
         )}
       </div>
