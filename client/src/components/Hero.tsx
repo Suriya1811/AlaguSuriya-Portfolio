@@ -16,13 +16,6 @@ export default function Hero() {
     }
   };
 
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/resume/AlaguSuriya-Resume.pdf"; // path to your resume file
-    link.download = "Alagu_Suriya_Resume.pdf";
-    link.click();
-  };
-
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* background gradient */}
@@ -56,7 +49,7 @@ export default function Hero() {
             Alagu Suriya
           </h1>
 
-          {/* New professional roles line */}
+          {/* Professional roles */}
           <p
             className="text-lg md:text-xl text-muted-foreground mb-6"
             data-testid="text-hero-roles"
@@ -90,7 +83,7 @@ export default function Hero() {
             data-testid="text-hero-intro"
           >
             B.E. CSE - 2025 graduate with hands-on experience in product
-            engineering, Data engineering, ETL workflows, and frontend development. Passionate about
+            engineering, data engineering, ETL workflows, and frontend development. Passionate about
             solving problems through clean, efficient, and reliable code.
           </p>
         </div>
@@ -111,15 +104,22 @@ export default function Hero() {
             <ArrowDown className="w-4 h-4" />
           </Button>
 
+          {/* ✅ Changed to "View Resume" and open in new tab */}
           <Button
             size="lg"
             variant="outline"
             className="gap-2"
-            onClick={downloadResume}
-            data-testid="button-download-resume"
+            asChild
+            data-testid="button-view-resume"
           >
-            <Download className="w-4 h-4" />
-            Download Resume
+            <a
+              href="https://drive.google.com/file/d/1GBDcuLllarwnXi2UfpNMnpLIp4N7I5-7/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Download className="w-4 h-4" />
+              View Resume
+            </a>
           </Button>
         </div>
       </div>

@@ -24,13 +24,6 @@ export default function Navbar() {
     }
   };
 
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/src/resume/Alagusuriya-Resume.pdf";
-    link.download = "Alagusuriya-Resume.pdf";
-    link.click();
-  };
-
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -51,6 +44,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+          {/* Name / Home */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="text-xl font-bold text-foreground hover-elevate px-4 py-2 rounded-md transition-all"
@@ -59,6 +53,7 @@ export default function Navbar() {
             Alagu Suriya
           </button>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-2">
             {navLinks.map((link) => (
               <Button
@@ -70,6 +65,8 @@ export default function Navbar() {
                 {link.label}
               </Button>
             ))}
+
+            {/* Theme Toggle */}
             <Button
               variant="ghost"
               size="icon"
@@ -82,17 +79,26 @@ export default function Navbar() {
                 <Moon className="h-5 w-5" />
               )}
             </Button>
+
+            {/* ✅ View Resume Button */}
             <Button
               variant="outline"
               size="sm"
-              onClick={downloadResume}
               className="gap-2"
+              asChild
             >
-              <Download className="h-4 w-4" />
-              Resume
+              <a
+                href="https://drive.google.com/file/d/1GBDcuLllarwnXi2UfpNMnpLIp4N7I5-7/view"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="h-4 w-4" />
+                View Resume
+              </a>
             </Button>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <Button
               variant="ghost"
@@ -118,6 +124,7 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-2" data-testid="menu-mobile">
             {navLinks.map((link) => (
@@ -131,13 +138,21 @@ export default function Navbar() {
                 {link.label}
               </Button>
             ))}
+
+            {/* ✅ Mobile View Resume */}
             <Button
               variant="outline"
               className="w-full justify-start gap-2"
-              onClick={downloadResume}
+              asChild
             >
-              <Download className="h-4 w-4" />
-              Download Resume
+              <a
+                href="https://drive.google.com/file/d/1GBDcuLllarwnXi2UfpNMnpLIp4N7I5-7/view"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="h-4 w-4" />
+                View Resume
+              </a>
             </Button>
           </div>
         )}
