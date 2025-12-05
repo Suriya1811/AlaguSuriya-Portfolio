@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { GraduationCap, Calendar } from "lucide-react";
+import { i } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
 
 const education = [
   {
@@ -56,3 +57,4 @@ export default function Education() {
     </section>
   );
 }
+
